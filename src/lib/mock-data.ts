@@ -59,14 +59,14 @@ export interface Risk {
 const avatar = (seed: string) =>
   `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(seed)}&backgroundType=gradientLinear`;
 
-export const projects: Project[] = [
+export const projects: Project[] = ([
   { id: "p1", name: "Atlas Platform Redesign", client: "Northwind Co.", progress: 72, status: "on-track", health: 88, dueDate: "Jul 24", lead: "Naledi Khumalo", team: ["Naledi", "Sipho", "Amara", "Tendai"], tasksDone: 84, tasksTotal: 117, risks: 2 },
   { id: "p2", name: "Mobile Banking v3", client: "FirstCape Bank", progress: 41, status: "at-risk", health: 64, dueDate: "Aug 12", lead: "Sipho Dlamini", team: ["Sipho", "Lerato", "Kabelo"], tasksDone: 38, tasksTotal: 92, risks: 5 },
   { id: "p3", name: "Warehouse OS Migration", client: "Karoo Logistics", progress: 18, status: "delayed", health: 42, dueDate: "Jun 30", lead: "Amara Okeke", team: ["Amara", "Jaco", "Pumi"], tasksDone: 14, tasksTotal: 78, risks: 7 },
   { id: "p4", name: "Analytics Insights Engine", client: "Internal", progress: 96, status: "on-track", health: 94, dueDate: "Jun 18", lead: "Tendai Moyo", team: ["Tendai", "Lerato"], tasksDone: 47, tasksTotal: 49, risks: 0 },
   { id: "p5", name: "Customer Portal Launch", client: "Aurora Health", progress: 100, status: "completed", health: 100, dueDate: "May 30", lead: "Lerato Ndlovu", team: ["Lerato", "Naledi"], tasksDone: 64, tasksTotal: 64, risks: 0 },
   { id: "p6", name: "AI Onboarding Flow", client: "Lumen Edu", progress: 55, status: "on-track", health: 81, dueDate: "Aug 02", lead: "Kabelo Mokoena", team: ["Kabelo", "Sipho", "Pumi"], tasksDone: 28, tasksTotal: 51, risks: 1 },
-].map((p) => ({ ...p, team: p.team.map((n) => n) }));
+] as Project[]);
 
 export const tasks: Task[] = [
   { id: "t1", title: "Draft design tokens for Atlas system", project: "Atlas Platform Redesign", assignee: "Naledi Khumalo", priority: "important", status: "in-progress", due: "Jun 14" },
