@@ -18,6 +18,7 @@ import { Route as AppReportsRouteImport } from './routes/_app.reports'
 import { Route as AppProjectsRouteImport } from './routes/_app.projects'
 import { Route as AppMeetingsRouteImport } from './routes/_app.meetings'
 import { Route as AppDashboardRouteImport } from './routes/_app.dashboard'
+import { Route as AppAuditRouteImport } from './routes/_app.audit'
 import { Route as AppAssistantRouteImport } from './routes/_app.assistant'
 
 const AppRoute = AppRouteImport.update({
@@ -64,6 +65,11 @@ const AppDashboardRoute = AppDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AppRoute,
 } as any)
+const AppAuditRoute = AppAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppAssistantRoute = AppAssistantRouteImport.update({
   id: '/assistant',
   path: '/assistant',
@@ -73,6 +79,7 @@ const AppAssistantRoute = AppAssistantRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/assistant': typeof AppAssistantRoute
+  '/audit': typeof AppAuditRoute
   '/dashboard': typeof AppDashboardRoute
   '/meetings': typeof AppMeetingsRoute
   '/projects': typeof AppProjectsRoute
@@ -84,6 +91,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/assistant': typeof AppAssistantRoute
+  '/audit': typeof AppAuditRoute
   '/dashboard': typeof AppDashboardRoute
   '/meetings': typeof AppMeetingsRoute
   '/projects': typeof AppProjectsRoute
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_app': typeof AppRouteWithChildren
   '/_app/assistant': typeof AppAssistantRoute
+  '/_app/audit': typeof AppAuditRoute
   '/_app/dashboard': typeof AppDashboardRoute
   '/_app/meetings': typeof AppMeetingsRoute
   '/_app/projects': typeof AppProjectsRoute
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/assistant'
+    | '/audit'
     | '/dashboard'
     | '/meetings'
     | '/projects'
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/assistant'
+    | '/audit'
     | '/dashboard'
     | '/meetings'
     | '/projects'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/'
     | '/_app'
     | '/_app/assistant'
+    | '/_app/audit'
     | '/_app/dashboard'
     | '/_app/meetings'
     | '/_app/projects'
@@ -212,6 +224,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppDashboardRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/audit': {
+      id: '/_app/audit'
+      path: '/audit'
+      fullPath: '/audit'
+      preLoaderRoute: typeof AppAuditRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/_app/assistant': {
       id: '/_app/assistant'
       path: '/assistant'
@@ -224,6 +243,7 @@ declare module '@tanstack/react-router' {
 
 interface AppRouteChildren {
   AppAssistantRoute: typeof AppAssistantRoute
+  AppAuditRoute: typeof AppAuditRoute
   AppDashboardRoute: typeof AppDashboardRoute
   AppMeetingsRoute: typeof AppMeetingsRoute
   AppProjectsRoute: typeof AppProjectsRoute
@@ -235,6 +255,7 @@ interface AppRouteChildren {
 
 const AppRouteChildren: AppRouteChildren = {
   AppAssistantRoute: AppAssistantRoute,
+  AppAuditRoute: AppAuditRoute,
   AppDashboardRoute: AppDashboardRoute,
   AppMeetingsRoute: AppMeetingsRoute,
   AppProjectsRoute: AppProjectsRoute,
@@ -253,3 +274,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
