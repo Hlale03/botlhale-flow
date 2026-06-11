@@ -14,9 +14,10 @@ function SettingsPage() {
         <Card>
           <p className="text-sm font-medium">Workspace</p>
           <div className="mt-4 space-y-3 text-sm">
-            <Row label="Workspace name" value="Botlhale Studio" />
-            <Row label="Plan" value="Pro" />
-            <Row label="Members" value="12" />
+            <Row label="Workspace name" value="Botlhale Enterprise IT" />
+            <Row label="Region" value="South Africa" />
+            <Row label="Plan" value="Enterprise" />
+            <Row label="Members" value="20" />
           </div>
         </Card>
         <Card>
