@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
-  Sparkles,
   Bot,
   CalendarClock,
   ShieldAlert,
@@ -12,30 +11,31 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Card } from "@/components/ui-bits";
+import logoUrl from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SMARTtlhale — Intelligence for Every Project" },
+      { title: "SMARTtlhale — AI-Powered IT Project Management for SA Enterprises" },
       {
         name: "description",
         content:
-          "The AI co-pilot for project managers. Summarize meetings, detect risks, plan weeks, and ship projects faster. Powered by Botlhale.",
+          "SMARTtlhale Project Management Flow is an AI-powered IT Project Management platform built for South African enterprise software, infrastructure and cloud projects. Powered by Botlhale.",
       },
-      { property: "og:title", content: "SMARTtlhale — Intelligence for Every Project" },
-      { property: "og:description", content: "AI-powered project management for modern teams." },
+      { property: "og:title", content: "SMARTtlhale — AI-Powered IT Project Management" },
+      { property: "og:description", content: "Built for African Innovation. Designed for Enterprise IT Excellence." },
     ],
   }),
   component: Landing,
 });
 
 const features = [
-  { icon: CalendarClock, title: "Meeting Summarizer", body: "Turn 60-minute calls into decisions, risks, and owned action items in seconds." },
-  { icon: ShieldAlert, title: "Risk Detection Engine", body: "Continuously scans deadlines, workloads and dependencies to surface what's about to break." },
-  { icon: FileBarChart2, title: "Progress Reports", body: "Executive-ready status reports — generated, formatted, and exportable in one click." },
-  { icon: Bot, title: "Project Chat Assistant", body: "Ask anything: 'what's overdue?', 'who's at risk of burnout?', 'summarize last week'." },
-  { icon: Workflow, title: "Smart Prioritization", body: "AI ranks tasks by urgency, impact, and dependencies so your team always works on what matters." },
-  { icon: Users, title: "Burnout Detection", body: "Detect overloaded teammates early and rebalance work before it costs you a sprint." },
+  { icon: CalendarClock, title: "Meeting Summarizer", body: "Turn 60-minute project calls into decisions, risks and owned action items — in seconds." },
+  { icon: ShieldAlert, title: "Risk Detection Engine", body: "Continuously scans deadlines, workloads, vendor SLAs and infrastructure constraints — including load-shedding and connectivity risk." },
+  { icon: FileBarChart2, title: "Executive Status Reports", body: "PMO-ready weekly reports for CTOs, COOs and steering committees — generated and exportable in one click." },
+  { icon: Bot, title: "Project Chat Assistant", body: "Ask anything across your IT portfolio: 'what's overdue?', 'which projects are over budget?', 'who is at risk of burnout?'." },
+  { icon: Workflow, title: "Smart Prioritization", body: "AI ranks tasks by urgency, impact and dependencies so engineering teams ship the right work first." },
+  { icon: Users, title: "Burnout & Workload Intel", body: "Detect overloaded engineers and PMs early — rebalance before a sprint, a release, or a rollout slips." },
 ];
 
 function Landing() {
@@ -45,13 +45,11 @@ function Landing() {
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[1100px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary shadow-elegant">
-            <Sparkles className="h-4 w-4 text-primary-foreground" />
-          </div>
+        <div className="flex items-center gap-2.5">
+          <img src={logoUrl} alt="SMARTtlhale logo" width={36} height={36} className="h-9 w-9 rounded-lg bg-card object-contain p-1 shadow-elegant ring-1 ring-border" />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold tracking-tight">SMARTtlhale</span>
-            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Project Flow</span>
+            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">IT Project Flow</span>
           </div>
         </div>
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
@@ -69,14 +67,15 @@ function Landing() {
 
       <section className="relative z-10 mx-auto max-w-7xl px-6 pb-24 pt-16 text-center md:pt-28">
         <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full bg-success" /> Powered by Botlhale AI
+          <span className="h-1.5 w-1.5 rounded-full bg-success" /> Built for African Innovation · Powered by Botlhale AI
         </div>
         <h1 className="mx-auto mt-6 max-w-4xl text-balance text-5xl font-semibold tracking-tight md:text-7xl">
-          Intelligence for <span className="text-gradient">every project.</span>
+          Intelligence for every <span className="text-gradient">IT project.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
-          SMARTtlhale is the AI co-pilot for project managers. It summarizes meetings,
-          detects risks, plans your week, and helps your team ship — without the busywork.
+          SMARTtlhale Project Management Flow is the AI co-pilot for South African IT project managers
+          running software, infrastructure, cloud and enterprise system projects. It summarizes meetings,
+          detects risks, audits spend, and helps your team ship — without the busywork.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
@@ -105,7 +104,7 @@ function Landing() {
             <div className="grid grid-cols-3 gap-4 p-6 text-left">
               <Card className="col-span-2">
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-medium">Project health</p>
+                  <p className="text-sm font-medium">Portfolio health · SA region</p>
                   <span className="text-xs text-success">+6.2%</span>
                 </div>
                 <div className="mt-4 grid h-32 grid-cols-7 items-end gap-2">
@@ -117,9 +116,9 @@ function Landing() {
               <Card>
                 <p className="text-sm font-medium">AI insights</p>
                 <ul className="mt-3 space-y-3 text-xs text-muted-foreground">
-                  <li className="flex gap-2"><Brain className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary-glow" /> 2 team members trending toward burnout.</li>
-                  <li className="flex gap-2"><Brain className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary-glow" /> Atlas likely to ship 4 days early.</li>
-                  <li className="flex gap-2"><Brain className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary-glow" /> Warehouse OS success probability ↓ 23%.</li>
+                  <li className="flex gap-2"><Brain className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary-glow" /> Tshegofatso & Tebogo trending toward burnout.</li>
+                  <li className="flex gap-2"><Brain className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary-glow" /> Tshwane Municipal Platform may ship 4 days early.</li>
+                  <li className="flex gap-2"><Brain className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary-glow" /> MTN 5G Eastern Cape success probability ↓ 25%.</li>
                 </ul>
               </Card>
             </div>
@@ -129,11 +128,11 @@ function Landing() {
 
       <section id="features" className="relative z-10 mx-auto max-w-7xl px-6 py-20">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs uppercase tracking-widest text-primary-glow">Features</p>
+          <p className="text-xs uppercase tracking-widest text-primary-glow">IT Project Intelligence</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-            Built for project managers who care about outcomes.
+            Built for IT project managers shipping real systems.
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground">Every feature is an AI co-pilot — not another form to fill out.</p>
+          <p className="mt-3 text-sm text-muted-foreground">Software delivery, infrastructure rollouts, system implementations, cloud migrations and IT operations — all on one intelligent platform.</p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => {
@@ -154,16 +153,22 @@ function Landing() {
       <section id="intelligence" className="relative z-10 mx-auto max-w-7xl px-6 py-20">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div>
-            <p className="text-xs uppercase tracking-widest text-primary-glow">Intelligence</p>
+            <p className="text-xs uppercase tracking-widest text-primary-glow">South African Context</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              An AI that actually understands your project.
+              An AI that understands your environment.
             </h2>
             <p className="mt-4 text-sm text-muted-foreground">
-              SMARTtlhale reads your meetings, watches your timelines, and continuously
-              scores project health — so you spot problems before they spot you.
+              SMARTtlhale models the realities of South African enterprise IT — load-shedding windows,
+              regional connectivity, SARB &amp; POPIA compliance, vendor SLAs, and provincial rollout
+              constraints — so risk signals reflect how projects actually behave on the ground.
             </p>
             <ul className="mt-6 space-y-3 text-sm">
-              {["Project Success Predictor", "Productivity Score per project", "Stakeholder brief in one click", "Smart prioritization across all work"].map((x) => (
+              {[
+                "Project Success Predictor tuned for SA delivery risk",
+                "Load-shedding & connectivity-aware planning",
+                "Internal audit & finance oversight (separation of duties)",
+                "Executive stakeholder brief in one click",
+              ].map((x) => (
                 <li key={x} className="flex items-center gap-2 text-foreground/90">
                   <CheckCircle2 className="h-4 w-4 text-success" /> {x}
                 </li>
@@ -173,12 +178,12 @@ function Landing() {
           <Card className="p-6">
             <div className="flex items-center justify-between">
               <p className="text-sm font-medium">Success predictor</p>
-              <span className="text-xs text-muted-foreground">Mobile Banking v3</span>
+              <span className="text-xs text-muted-foreground">FNB Core Banking v3</span>
             </div>
             <div className="mt-6 flex items-end gap-6">
               <div className="text-6xl font-semibold tracking-tight text-gradient">62%</div>
               <p className="pb-2 text-xs text-muted-foreground">
-                Confidence: medium · Down 9% this week, primarily driven by compliance sign-off delays.
+                Confidence: medium · Down 9% this week, primarily driven by SARB compliance sign-off delays and travel-budget variance.
               </p>
             </div>
             <div className="mt-6 grid grid-cols-3 gap-3 text-center text-xs">
@@ -196,10 +201,10 @@ function Landing() {
       <section id="workflow" className="relative z-10 mx-auto max-w-7xl px-6 py-20">
         <Card className="overflow-hidden p-10 text-center">
           <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-            Ready to give your team an unfair advantage?
+            Built for African Innovation. Designed for Enterprise IT Excellence.
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-            Step into the SMARTtlhale workspace and see your projects through an AI lens.
+            Step into the SMARTtlhale workspace and see your IT portfolio through an AI lens.
           </p>
           <Link
             to="/dashboard"
