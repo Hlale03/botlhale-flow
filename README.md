@@ -14,7 +14,7 @@ Built with a South African perspective, SMARTtlhale incorporates local business 
 
 Key Features
 
-🤖 AI-Powered Project Management
+AI-Powered Project Management
 
 * Project tracking and management
 * AI task prioritization
@@ -22,7 +22,7 @@ Key Features
 * Risk detection and analysis
 * Project success prediction
 
-📧 AI Workplace Assistant
+AI Workplace Assistant
 
 * Email generation
 * Meeting summarization
@@ -31,7 +31,7 @@ Key Features
 * Research assistance
 * AI chatbot interaction
 
- 📊 Reporting & Insights
+ Reporting & Insights
 
 * Automated project reports
 * Stakeholder brief generation
@@ -39,7 +39,7 @@ Key Features
 * Team workload monitoring
 * Smart recommendations and insights
 
-👥 Team Management
+Team Management
 
 * Team collaboration
 * Workload balancing
