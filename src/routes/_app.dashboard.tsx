@@ -26,7 +26,7 @@ function DashboardPage() {
 
   return (
     <div>
-      <SectionHeader title="Welcome back, Naledi" description="Here's where your portfolio stands today." />
+      <SectionHeader title="Welcome back, Kagiso" description="Here is where your IT project portfolio stands across South Africa today." />
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {stats.map((s) => {

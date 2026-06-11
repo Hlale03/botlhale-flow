@@ -10,9 +10,10 @@ import {
   Settings,
   Search,
   Bell,
-  Sparkles,
+  ShieldCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoUrl from "@/assets/logo.png";
 
 const nav = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -21,6 +22,7 @@ const nav = [
   { to: "/meetings", label: "Meetings", icon: CalendarClock },
   { to: "/reports", label: "Reports", icon: FileBarChart2 },
   { to: "/team", label: "Team", icon: Users },
+  { to: "/audit", label: "Audit", icon: ShieldCheck },
   { to: "/assistant", label: "AI Assistant", icon: Bot },
   { to: "/settings", label: "Settings", icon: Settings },
 ] as const;
@@ -33,13 +35,11 @@ export function AppShell() {
       <div className="pointer-events-none fixed inset-0 bg-radial-glow opacity-60" />
       <div className="relative flex min-h-screen">
         <aside className="hidden w-64 shrink-0 border-r border-sidebar-border bg-sidebar/80 backdrop-blur-xl md:flex md:flex-col">
-          <div className="flex items-center gap-2 px-6 py-5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary shadow-elegant">
-              <Sparkles className="h-4 w-4 text-primary-foreground" />
-            </div>
+          <div className="flex items-center gap-2.5 px-6 py-5">
+            <img src={logoUrl} alt="SMARTtlhale logo" width={32} height={32} className="h-8 w-8 rounded-lg bg-card object-contain p-0.5 shadow-elegant ring-1 ring-border" />
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-semibold tracking-tight">SMARTtlhale</span>
-              <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Project Flow</span>
+              <span className="text-[10px] uppercase tracking-widest text-muted-foreground">IT Project Flow</span>
             </div>
           </div>
 
@@ -90,8 +90,8 @@ export function AppShell() {
             <div className="flex items-center gap-2 rounded-md border border-border bg-card/60 px-2 py-1">
               <div className="h-6 w-6 rounded-full bg-gradient-primary" />
               <div className="hidden text-xs leading-tight sm:block">
-                <p className="font-medium">Naledi K.</p>
-                <p className="text-muted-foreground">Workspace admin</p>
+              <p className="font-medium">Kagiso M.</p>
+              <p className="text-muted-foreground">Senior IT Project Manager</p>
               </div>
             </div>
           </header>

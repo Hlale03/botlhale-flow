@@ -11,23 +11,26 @@ export const Route = createFileRoute("/_app/assistant")({
 type Msg = { role: "user" | "ai"; content: string };
 
 const seedMessages: Msg[] = [
-  { role: "ai", content: "Hi Naledi 👋 — I'm your SMARTtlhale assistant. I have the latest context across your projects. Ask me anything." },
+  { role: "ai", content: "Dumela Kagiso 👋 — I'm your SMARTtlhale assistant. I have full context across your South African IT project portfolio. Ask me anything." },
 ];
 
 const suggestions = [
   "What tasks are overdue this week?",
-  "Summarize yesterday's Atlas sync",
+  "Summarize the Tshwane Municipal sync",
   "Which projects are at risk?",
   "Who is at risk of burnout?",
+  "Which projects have budget overrun risk?",
 ];
 
 function respond(q: string): string {
   const lower = q.toLowerCase();
-  if (lower.includes("overdue")) return "14 tasks are overdue across 4 projects. The largest cluster (6) is on Warehouse OS Migration — owner: Amara Okeke. Want me to draft a re-plan?";
-  if (lower.includes("risk")) return "Mobile Banking v3 and Warehouse OS Migration are the two most at-risk. The biggest single risk is the schema migration owner being overloaded (score 92). Suggested mitigation: reassign 2 tasks to Jaco and add a buffer day.";
-  if (lower.includes("burnout")) return "Sipho Dlamini (94% workload, 3 weeks running) and Amara Okeke (88%) are showing burnout signals. I recommend redistributing 3 tasks to Kabelo and Pumi.";
-  if (lower.includes("summar")) return "Atlas weekly sync — Decisions: adopt new tokens by Friday; postpone analytics widget. Risks: auth library blocker may push release 3 days. Action items: Sipho to unblock auth by Jun 11; Naledi to publish tokens by Jun 13.";
-  return "Based on your current portfolio: avg health is 78, completion is 64%, and there are 3 critical risks. Tell me what you'd like to dig into.";
+  if (lower.includes("budget") || lower.includes("overrun") || lower.includes("spend"))
+    return "MTN 5G Rollout — Eastern Cape has spent 34% of budget against 18% delivery — capex pacing risk. FNB Core Banking v3 is 38% over its travel budget YTD. Recommend re-baselining MTN cost-to-complete and switching non-critical FNB vendor reviews to remote.";
+  if (lower.includes("overdue")) return "14 tasks are overdue across 4 projects. The largest cluster (6) sits on the MTN 5G Rollout — Eastern Cape — owner: Bontle Phiri. Want me to draft a re-plan that accounts for Stage-4 load-shedding windows?";
+  if (lower.includes("risk")) return "FNB Core Banking v3 and MTN 5G Rollout are the two most at-risk. The biggest single risk is Eastern Cape tower-site readiness compounded by load-shedding (score 92). Suggested mitigation: reassign 2 site surveys to Tebogo and add a 2-day buffer per tower milestone.";
+  if (lower.includes("burnout")) return "Tshegofatso Sejake (94% workload, 3 weeks running) and Tebogo Seabela (90%) are showing burnout signals. I recommend redistributing 3 tasks to Rebaone and Mpho.";
+  if (lower.includes("summar")) return "Tshwane Municipal Platform weekly sync — Decisions: adopt new tokens by Friday; provision Cape Town fallback for load-shedding. Risks: SITA identity integration blocker (3-day UAT slip); Stage-6 load-shedding affecting next demo. Actions: Rebaone to unblock SITA integration by Jun 11; Kagiso to publish design tokens by Jun 13.";
+  return "Across the SA portfolio: average project health is 77, completion is 63%, and there are 3 critical risks — mostly tied to Eastern Cape rollout and SARB compliance. Tell me what you'd like to dig into.";
 }
 
 function AssistantPage() {
