@@ -77,13 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SMARTtlhale — Intelligence for Every Project" },
+      { title: "SMARTtlhale PM — Intelligence for Every Project" },
       { name: "description", content: "SMARTtlhale Project Management Flow — the AI co-pilot for project managers. Summarize meetings, detect risks, and ship projects faster." },
       { name: "author", content: "Botlhale" },
-      { property: "og:title", content: "SMARTtlhale — Intelligence for Every Project" },
-      { property: "og:description", content: "AI co-pilot for modern project teams. Powered by Botlhale." },
+      { property: "og:title", content: "SMARTtlhale PM — Intelligence for Every Project" },
+      { property: "og:description", content: "SMARTtlhale Project Management Flow — the AI co-pilot for project managers. Summarize meetings, detect risks, and ship projects faster." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "SMARTtlhale PM — Intelligence for Every Project" },
+      { name: "twitter:description", content: "SMARTtlhale Project Management Flow — the AI co-pilot for project managers. Summarize meetings, detect risks, and ship projects faster." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7259584d-5393-4aac-86a1-0433b20008c3" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7259584d-5393-4aac-86a1-0433b20008c3" },
     ],
     links: [
       {
